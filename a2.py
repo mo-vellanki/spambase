@@ -36,15 +36,18 @@ data = pd.read_csv("/home/mohit/projects/bth/ML/a2/spambase/spambase.data",  del
 X = data.iloc[:,0:57]
 y = data['spam']
 
-clf_NB = LogisticRegression()
-clf_DT = LinearSVC()
-clf_LR = DecisionTreeClassifier()
+#clf_NB = LogisticRegression()
+#clf_DT = LinearSVC()
+#clf_LR = DecisionTreeClassifier()
+clf_NB = GaussianNB()
+clf_DT = DecisionTreeClassifier()
+clf_LR = LogisticRegression()
 
 skf = StratifiedKFold(n_splits=10)
 skf.get_n_splits(X,y)
 print(skf)
 print("============")
-print("Table 2")
+print("Table 1")
 print("============")
 print("____________________________________________________________________")
 print("Folds\t\tNaive Bayes\tDecision Tree\tLogistic Regression")
